@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+
+  vpn:
+    build: openvpn
+    #image: phlak/openvpn
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    volumes:
+      - /home/mgering/openvpn:/vol/config
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - "1080:1080"
+    #entrypoint: /bin/bash
+
+  dante:
+    build: dante
+    network_mode: "service:vpn"
+    depends_on:
+      - vpn
