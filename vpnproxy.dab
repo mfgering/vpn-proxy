@@ -1,0 +1,21 @@
+{
+  "Services": {
+    "dante": {
+      "Image": "mgering/dante@sha256:dc46877bf7934b7640e5a1df0606216b7ee9797465d31c39020ae743b8775c5c", 
+      "Networks": []
+    }, 
+    "vpn": {
+      "Image": "mgering/openvpn@sha256:5b1100da6a03ed7fc2a7ec70f563a0daec316e26fa7cf1971c169ba0dceaf327", 
+      "Networks": [
+        "default"
+      ], 
+      "Ports": [
+        {
+          "Port": 1080, 
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  }, 
+  "Version": "0.1"
+}
