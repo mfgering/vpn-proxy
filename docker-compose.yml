@@ -1,8 +1,8 @@
 version: '2'
 
 services:
-
   vpn:
+    image: mgering/openvpn
     build: openvpn
     #image: phlak/openvpn
     dns:
@@ -20,6 +20,7 @@ services:
     #entrypoint: /bin/bash
 
   dante:
+    image: mgering/dante
     build: dante
     network_mode: "service:vpn"
     depends_on:

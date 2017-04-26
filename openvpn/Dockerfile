@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER Chris Kankiewicz <Chris@ChrisKankiewicz.com>
+MAINTAINER Mike Gering <mike@mfg-consulting-llc.com>
 
 # Define OpenVPN version
 ARG OVPN_VERSION=2.3.14-r0
