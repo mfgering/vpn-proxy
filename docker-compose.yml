@@ -1,8 +1,8 @@
 version: '2'
 
 services:
-  vpn:
-    image: mgering/openvpn
+  vpn_proxy:
+    image: mgering/openvpn-proxy
     build: openvpn
     dns:
       - 8.8.8.8
@@ -16,10 +16,3 @@ services:
       - /dev/net/tun
     ports:
       - "1080:1080"
-
-  dante:
-    image: mgering/dante
-    build: dante
-    network_mode: "service:vpn"
-    depends_on:
-      - vpn
