@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM debian:stretch-slim
 MAINTAINER Mike Gering <mike@mfg-consulting-llc.com>
 
 ENV DANTE_VER 1.4.2
