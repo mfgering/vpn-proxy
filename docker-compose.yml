@@ -3,7 +3,7 @@ version: '2'
 services:
   vpn_proxy:
     image: mgering/openvpn-proxy
-    build: openvpn
+    build: .
     dns:
       - 8.8.8.8
       - 8.8.4.4
