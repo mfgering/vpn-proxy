@@ -37,6 +37,7 @@ COPY start_dante.sh /usr/sbin/start_dante.sh
 COPY stop_dante.sh /usr/sbin/stop_dante.sh
 COPY start_openvpn.sh /usr/sbin/start_openvpn.sh
 COPY dante-env-vars.tmpl /etc/dante/dante-env-vars.tmpl
+COPY health_check.sh /usr/sbin/health_check.sh
 
 ENV CFGFILE /etc/sockd.conf
 ENV PIDFILE /tmp/sockd.pid
@@ -44,6 +45,8 @@ ENV WORKERS 10
 ENV OPENVPN_CONFIG /vol/config/openvpn.conf
 
 EXPOSE 1080
+
+HEALTHCHECK CMD /usr/sbin/health_check.sh
 
 # Set working directory
 WORKDIR /vol/config
