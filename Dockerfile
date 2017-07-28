@@ -24,7 +24,7 @@ RUN set -xe \
         && make install \
         && cd .. \
         && rm -rf $DANTE_TEMP \
-    && apt-get install -y curl unrar-free zip unzip wget \
+    && apt-get install -y curl unrar-free zip unzip wget procps \
     && curl -sLO https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64.deb \
     && curl -L https://github.com/jwilder/dockerize/releases/download/v0.4.0/dockerize-linux-amd64-v0.4.0.tar.gz | tar -C /usr/local/bin -xzv \    
     && dpkg -i dumb-init_*.deb \
