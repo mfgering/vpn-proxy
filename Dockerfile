@@ -3,7 +3,7 @@ MAINTAINER Mike Gering <mike@mfg-consulting-llc.com>
 
 ENV DANTE_VER 1.4.2
 ENV DANTE_URL https://www.inet.no/dante/files/dante-$DANTE_VER.tar.gz
-ENV DANTE_SHA baa25750633a7f9f37467ee43afdf7a95c80274394eddd7dcd4e1542aa75caad
+ENV DANTE_SHA 4c97cff23e5c9b00ca1ec8a95ab22972813921d7fbf60fc453e3e06382fc38a7
 ENV DANTE_FILE dante.tar.gz
 ENV DANTE_TEMP dante
 ENV DANTE_DEPS build-essential curl
@@ -26,7 +26,7 @@ RUN set -xe \
         && rm -rf $DANTE_TEMP \
     && apt-get install -y curl unrar-free zip unzip wget procps \
     && curl -sLO https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64.deb \
-    && curl -L https://github.com/jwilder/dockerize/releases/download/v0.4.0/dockerize-linux-amd64-v0.4.0.tar.gz | tar -C /usr/local/bin -xzv \    
+    && curl -L https://github.com/jwilder/dockerize/releases/download/v0.4.0/dockerize-linux-amd64-v0.4.0.tar.gz | tar -C /usr/local/bin -xzv \
     && dpkg -i dumb-init_*.deb \
     && rm -rf dumb-init_*.deb \
     && rm -rf /var/lib/apt/lists/* \
